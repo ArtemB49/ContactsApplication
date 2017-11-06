@@ -28,11 +28,6 @@ class UserTVC: UITableViewController {
     }
     
     //MARK TableView Delegate
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        refreshControl?.beginRefreshing()
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users?.count ?? 0
@@ -40,11 +35,19 @@ class UserTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        if let user = users?[indexPath.row]{
+            cell.imageView?.image = getImage(by: user.photoSmall)
+            cell.textLabel?.text = "\(user.firstName.firstUppercased) \(user.lastName.firstUppercased)"
+        }
         
-        let row = indexPath.row
-        cell.imageView?.image = getImage(by: users![row].photoSmall)
-        cell.textLabel?.text = "\(users![row].firstName) \(users![row].lastName)"
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastRow = indexPath.row
+        if lastRow == self.users!.count - 1{
+            addUsers(at: lastRow + 1)
+        }
     }
     
     //MARK: User Image
@@ -72,6 +75,32 @@ class UserTVC: UITableViewController {
             }
             
         })
+    }
+    
+    func addUsers(at lastRow: Int) {
+        service.loadUser(completion: { (result) in
+            DispatchQueue.main.async {
+                for user in result!{
+                    self.users?.append(user)
+                    self.tableView.reloadData()
+                    
+                }
+            }            
+        })
+    }
+    
+    //MARK Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "userInfo"){
+            if let cell = sender as? UITableViewCell,
+                let userInfoVC = segue.destination as? UserInfoVC,
+                let row = tableView.indexPath(for: cell)?.row{
+                    userInfoVC.user = self.users![row]
+            }
+            
+            
+        }
     }
 
 

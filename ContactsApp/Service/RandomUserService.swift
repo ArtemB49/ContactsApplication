@@ -26,4 +26,18 @@ class RandomUserService {
                 
         }
     }
+    
+    func fetchImage(by urlString: String, completion: @escaping (UIImage) -> Void ){
+        DispatchQueue.global(qos: .utility).async {
+            do{
+                if let url = URL(string: urlString){
+                    let data = try Data(contentsOf: url)
+                    completion(UIImage(data: data)!)
+                }
+            } catch {
+                completion(UIImage(named: "user")!)
+            }
+        }
+    }
+    
 }

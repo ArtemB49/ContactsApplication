@@ -18,7 +18,9 @@ class User{
     var phone: String = ""
     var date: String = ""
     var email: String = ""
-    var bornInfo:String = ""
+    var city:String = ""
+    var street = ""
+    
     
     
     init(json: JSON) {
@@ -29,6 +31,7 @@ class User{
         self.date = json["dob"].stringValue
         self.phone = json["phone"].stringValue
         self.email = json["email"].stringValue
-        self.bornInfo = json["location"]["city"].stringValue
+        self.city = json["location"]["city"].stringValue
+        self.street = json["location"]["street"].stringValue
     }
 }

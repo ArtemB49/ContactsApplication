@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEE529AA1FB0779500B7F882 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE529A91FB0779500B7F882 /* UserInfoVC.swift */; };
+		AEE529AD1FB0915E00B7F882 /* FirstUppercased.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE529AC1FB0915E00B7F882 /* FirstUppercased.swift */; };
 		AEF9079A1FB063FC005EA164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF907991FB063FC005EA164 /* AppDelegate.swift */; };
 		AEF9079C1FB063FC005EA164 /* UserTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF9079B1FB063FC005EA164 /* UserTVC.swift */; };
 		AEF9079F1FB063FC005EA164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF9079D1FB063FC005EA164 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 		476D228D6A9A0774F39F4D9B /* Pods-ContactsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContactsApp/Pods-ContactsApp.release.xcconfig"; sourceTree = "<group>"; };
 		54DB39AADC1C8F6257A8E103 /* Pods_ContactsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAAE25617EEC2D3B3FA13A4D /* Pods-ContactsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContactsApp/Pods-ContactsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AEE529A91FB0779500B7F882 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		AEE529AC1FB0915E00B7F882 /* FirstUppercased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstUppercased.swift; sourceTree = "<group>"; };
 		AEF907961FB063FC005EA164 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF907991FB063FC005EA164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEF9079B1FB063FC005EA164 /* UserTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTVC.swift; sourceTree = "<group>"; };
@@ -56,6 +60,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AEE529A81FB076A200B7F882 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AEF9079B1FB063FC005EA164 /* UserTVC.swift */,
+				AEE529A91FB0779500B7F882 /* UserInfoVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AEE529AB1FB0911500B7F882 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEF907991FB063FC005EA164 /* AppDelegate.swift */,
+				AEF907A01FB063FC005EA164 /* Assets.xcassets */,
+				AEF907A51FB063FC005EA164 /* Info.plist */,
+				AEE529AC1FB0915E00B7F882 /* FirstUppercased.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		AEF9078D1FB063FC005EA164 = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +105,8 @@
 				AEF907B11FB06687005EA164 /* Database */,
 				AEF907AE1FB06663005EA164 /* Model */,
 				AEF907AB1FB065BB005EA164 /* Service */,
-				AEF907991FB063FC005EA164 /* AppDelegate.swift */,
-				AEF9079B1FB063FC005EA164 /* UserTVC.swift */,
-				AEF907A01FB063FC005EA164 /* Assets.xcassets */,
-				AEF907A51FB063FC005EA164 /* Info.plist */,
+				AEE529AB1FB0911500B7F882 /* Supporting Files */,
+				AEE529A81FB076A200B7F882 /* Controllers */,
 			);
 			path = ContactsApp;
 			sourceTree = "<group>";
@@ -269,8 +291,10 @@
 				AEF907B01FB0666E005EA164 /* User.swift in Sources */,
 				AEF9079C1FB063FC005EA164 /* UserTVC.swift in Sources */,
 				AEF9079A1FB063FC005EA164 /* AppDelegate.swift in Sources */,
+				AEE529AD1FB0915E00B7F882 /* FirstUppercased.swift in Sources */,
 				AEF907B31FB06698005EA164 /* Database.swift in Sources */,
 				AEF907AD1FB065CE005EA164 /* RandomUserService.swift in Sources */,
+				AEE529AA1FB0779500B7F882 /* UserInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

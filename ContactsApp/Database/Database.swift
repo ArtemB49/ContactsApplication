@@ -48,7 +48,8 @@ class Database {
                     photo_small TEXT,
                     photo_large TEXT,
                     date TEXT,
-                    born_info TEXT,
+                    city TEXT,
+                    street TEXT,
                     phone TEXT,
                     email TEXT)
                     """)
@@ -67,12 +68,12 @@ class Database {
                 do{
                     try databaseQueue.inDatabase{ db in
                         try db.execute("""
-                            INSERT INTO users ( first_name, last_name, photo_small, photo_large, date, born_info, phone, email)
-                            VALUES (:first, :last, :photo_small, :photo_large, :date, :born, :phone, :email)
+                            INSERT INTO users ( first_name, last_name, photo_small, photo_large, date, address, phone, email)
+                            VALUES (:first, :last, :photo_small, :photo_large, :date, :city, :street, :phone, :email)
                             """,
                                        arguments: ["first": user.firstName, "last": user.lastName,
                                                    "photo_small": user.photoSmall, "photo_large": user.photoLarge,
-                                                   "date": user.date, "born": user.bornInfo,
+                                                   "date": user.date, "city": user.city, "street": user.street,
                                                    "phone": user.phone, "email": user.email])
                     }
                     
