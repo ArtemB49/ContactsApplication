@@ -68,7 +68,7 @@ class Database {
                 do{
                     try databaseQueue.inDatabase{ db in
                         try db.execute("""
-                            INSERT INTO users ( first_name, last_name, photo_small, photo_large, date, address, phone, email)
+                            INSERT INTO users ( first_name, last_name, photo_small, photo_large, date, city, street, phone, email)
                             VALUES (:first, :last, :photo_small, :photo_large, :date, :city, :street, :phone, :email)
                             """,
                                        arguments: ["first": user.firstName, "last": user.lastName,
@@ -82,7 +82,35 @@ class Database {
                 }
             }
         }
-        
+    }
+    
+    func loadUsers(completion: @escaping ([User]?) -> Void){
+        DispatchQueue.global(qos: .utility).async {
+            
+            do{
+                var users:[User] = []
+                if let databaseQueue = self.dbQueue{
+                    try databaseQueue.inDatabase{ db in
+                        let rows = try Row.fetchCursor(db, "SELECT * FROM users")
+                        while let row = try rows.next() {
+                            let user = User(first: row["first_name"],
+                                            last: row["last_name"],
+                                            photoSmall: row["photo_small"],
+                                            photoLarge: row["photo_large"],
+                                            phone: row["date"],
+                                            date: row["city"],
+                                            email: row["street"],
+                                            city: row["phone"],
+                                            street: row["email"])
+                            users.append(user)
+                        }
+                    }
+                }
+                completion(users)
+            } catch {
+                print("Error load users from database")
+            }
+        }
     }
     
 }

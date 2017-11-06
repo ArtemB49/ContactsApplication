@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AEE529AA1FB0779500B7F882 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE529A91FB0779500B7F882 /* UserInfoVC.swift */; };
 		AEE529AD1FB0915E00B7F882 /* FirstUppercased.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE529AC1FB0915E00B7F882 /* FirstUppercased.swift */; };
+		AEE529AF1FB0A8C500B7F882 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE529AE1FB0A8C500B7F882 /* Reachability.swift */; };
 		AEF9079A1FB063FC005EA164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF907991FB063FC005EA164 /* AppDelegate.swift */; };
 		AEF9079C1FB063FC005EA164 /* UserTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF9079B1FB063FC005EA164 /* UserTVC.swift */; };
 		AEF9079F1FB063FC005EA164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF9079D1FB063FC005EA164 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		AAAE25617EEC2D3B3FA13A4D /* Pods-ContactsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContactsApp/Pods-ContactsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AEE529A91FB0779500B7F882 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		AEE529AC1FB0915E00B7F882 /* FirstUppercased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstUppercased.swift; sourceTree = "<group>"; };
+		AEE529AE1FB0A8C500B7F882 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AEF907961FB063FC005EA164 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF907991FB063FC005EA164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEF9079B1FB063FC005EA164 /* UserTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTVC.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				AEF907AC1FB065CE005EA164 /* RandomUserService.swift */,
+				AEE529AE1FB0A8C500B7F882 /* Reachability.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				AEE529AD1FB0915E00B7F882 /* FirstUppercased.swift in Sources */,
 				AEF907B31FB06698005EA164 /* Database.swift in Sources */,
 				AEF907AD1FB065CE005EA164 /* RandomUserService.swift in Sources */,
+				AEE529AF1FB0A8C500B7F882 /* Reachability.swift in Sources */,
 				AEE529AA1FB0779500B7F882 /* UserInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

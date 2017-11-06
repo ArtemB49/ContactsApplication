@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import Foundation
 import SwiftyJSON
 
-class User{
+class User {
     var firstName: String = ""
     var lastName: String = ""
     var photoSmall: String = ""
@@ -18,10 +17,9 @@ class User{
     var phone: String = ""
     var date: String = ""
     var email: String = ""
-    var city:String = ""
-    var street = ""
-    
-    
+    var city: String = ""
+    var street: String = ""
+
     
     init(json: JSON) {
         self.firstName = json["name"]["first"].stringValue
@@ -34,4 +32,22 @@ class User{
         self.city = json["location"]["city"].stringValue
         self.street = json["location"]["street"].stringValue
     }
+
+    init(first: String, last: String, photoSmall: String,
+         photoLarge: String, phone: String, date: String,
+         email: String, city: String, street: String){
+        self.firstName = first
+        self.lastName = last
+        self.photoSmall = photoSmall
+        self.photoLarge = photoLarge
+        self.date = date
+        self.phone = phone
+        self.email = email
+        self.city = city
+        self.street = street
+    }
+    
+    
+    
 }
+

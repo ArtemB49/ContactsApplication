@@ -23,8 +23,13 @@ class UserTVC: UITableViewController {
         
         refreshControl = UIRefreshControl()
         refreshControl?.attributedTitle = NSAttributedString(string: "Обновление" )
-        refreshControl?.addTarget(self, action: #selector(loadUsers(_:)), for: .valueChanged)
-        self.loadUsers(self)
+        refreshControl?.addTarget(self, action: #selector(loadUsersNet(_:)), for: .valueChanged)
+        if Reachability.isConnectedToNetwork(){
+            self.loadUsersNet(self)
+        } else {
+            self.loadUsersDB()
+        }
+        
     }
     
     //MARK TableView Delegate
@@ -53,20 +58,23 @@ class UserTVC: UITableViewController {
     //MARK: User Image
     
     func getImage(by urlString: String) -> UIImage {
+        guard Reachability.isConnectedToNetwork() else {
+            return UIImage(named: "user")!
+        }
         do{
             if let url = URL(string: urlString){
                 let data = try Data(contentsOf: url)
                 return UIImage(data: data)!
             }
         } catch {
-            return UIImage(named: "user")!
+            print(error)
         }
         return UIImage(named: "user")!
     }
     
     //MARK: Load User List
     
-    @objc func loadUsers(_ sender: Any) {
+    @objc func loadUsersNet(_ sender: Any) {
         service.loadUser(completion: {result in
             DispatchQueue.main.async {
                 self.users = result
@@ -75,6 +83,15 @@ class UserTVC: UITableViewController {
             }
             
         })
+    }
+    
+    func loadUsersDB()  {
+        database.loadUsers(completion: { (result) in
+            DispatchQueue.main.async {
+                self.users = result
+                self.refreshControl?.endRefreshing()
+            }
+        })        
     }
     
     func addUsers(at lastRow: Int) {
@@ -98,8 +115,6 @@ class UserTVC: UITableViewController {
                 let row = tableView.indexPath(for: cell)?.row{
                     userInfoVC.user = self.users![row]
             }
-            
-            
         }
     }
 

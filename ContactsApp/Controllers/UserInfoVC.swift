@@ -32,6 +32,12 @@ class UserInfoVC: UIViewController {
             getImage()
         }
         
+        
+        let tapEmail = UITapGestureRecognizer(target: self, action: #selector(self.emailTapped(_:)))
+        let tapPhone = UITapGestureRecognizer(target: self, action: #selector(self.phoneTapped(_:)))
+        self.phone.addGestureRecognizer(tapPhone)
+        self.email.addGestureRecognizer(tapEmail)
+        
     }
     
     func getImage(){
@@ -43,6 +49,23 @@ class UserInfoVC: UIViewController {
                 
             })
         }
+    }
+    
+    @objc func emailTapped(_ recognizer: UITapGestureRecognizer){
+        showAction(with: self.email?.text ?? "")
+    }
+    
+    @objc func phoneTapped(_ recognizer: UITapGestureRecognizer){
+        showAction(with: self.phone?.text ?? "")
+    }
+    
+    func showAction(with title: String){
+        let alert = UIAlertController(title: "Message", message: title, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
     }
 
 
