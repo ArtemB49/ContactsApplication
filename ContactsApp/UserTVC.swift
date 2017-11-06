@@ -42,7 +42,7 @@ class UserTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         let row = indexPath.row
-        cell.imageView?.image = getImage(by: users![row].photo)
+        cell.imageView?.image = getImage(by: users![row].photoSmall)
         cell.textLabel?.text = "\(users![row].firstName) \(users![row].lastName)"
         return cell
     }

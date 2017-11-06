@@ -13,7 +13,8 @@ import SwiftyJSON
 class User{
     var firstName: String = ""
     var lastName: String = ""
-    var photo: String = ""
+    var photoSmall: String = ""
+    var photoLarge: String = ""
     var phone: String = ""
     var date: String = ""
     var email: String = ""
@@ -23,7 +24,8 @@ class User{
     init(json: JSON) {
         self.firstName = json["name"]["first"].stringValue
         self.lastName = json["name"]["last"].stringValue
-        self.photo = json["picture"]["thumbnail"].stringValue
+        self.photoSmall = json["picture"]["thumbnail"].stringValue
+        self.photoLarge = json["picture"]["large"].stringValue
         self.date = json["dob"].stringValue
         self.phone = json["phone"].stringValue
         self.email = json["email"].stringValue

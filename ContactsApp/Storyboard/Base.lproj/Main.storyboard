@@ -34,6 +34,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Aqg-mA-JrC" kind="show" id="0dk-LO-qG0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -67,6 +70,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M36-94-gur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="236" y="154"/>
+        </scene>
+        <!--UserInfo-->
+        <scene sceneID="lf0-h9-N2j">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserInfo" id="Aqg-mA-JrC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPF-hF-xWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1471" y="154"/>
         </scene>
     </scenes>
 </document>

@@ -15,6 +15,7 @@
 		AEF907AD1FB065CE005EA164 /* RandomUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF907AC1FB065CE005EA164 /* RandomUserService.swift */; };
 		AEF907B01FB0666E005EA164 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF907AF1FB0666E005EA164 /* User.swift */; };
 		AEF907B31FB06698005EA164 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF907B21FB06698005EA164 /* Database.swift */; };
+		AEF907B61FB06AC3005EA164 /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF907B51FB06AC3005EA164 /* UserInfo.storyboard */; };
 		BE9617F532CC47DF410D9549 /* Pods_ContactsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54DB39AADC1C8F6257A8E103 /* Pods_ContactsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		AEF907AC1FB065CE005EA164 /* RandomUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserService.swift; sourceTree = "<group>"; };
 		AEF907AF1FB0666E005EA164 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AEF907B21FB06698005EA164 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		AEF907B51FB06AC3005EA164 /* UserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfo.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,14 +77,13 @@
 		AEF907981FB063FC005EA164 /* ContactsApp */ = {
 			isa = PBXGroup;
 			children = (
+				AEF907B41FB069F6005EA164 /* Storyboard */,
 				AEF907B11FB06687005EA164 /* Database */,
 				AEF907AE1FB06663005EA164 /* Model */,
 				AEF907AB1FB065BB005EA164 /* Service */,
 				AEF907991FB063FC005EA164 /* AppDelegate.swift */,
 				AEF9079B1FB063FC005EA164 /* UserTVC.swift */,
-				AEF9079D1FB063FC005EA164 /* Main.storyboard */,
 				AEF907A01FB063FC005EA164 /* Assets.xcassets */,
-				AEF907A21FB063FC005EA164 /* LaunchScreen.storyboard */,
 				AEF907A51FB063FC005EA164 /* Info.plist */,
 			);
 			path = ContactsApp;
@@ -110,6 +111,16 @@
 				AEF907B21FB06698005EA164 /* Database.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		AEF907B41FB069F6005EA164 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AEF9079D1FB063FC005EA164 /* Main.storyboard */,
+				AEF907A21FB063FC005EA164 /* LaunchScreen.storyboard */,
+				AEF907B51FB06AC3005EA164 /* UserInfo.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		FE0993734593FE502A037F0A /* Pods */ = {
@@ -184,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEF907A41FB063FC005EA164 /* LaunchScreen.storyboard in Resources */,
+				AEF907B61FB06AC3005EA164 /* UserInfo.storyboard in Resources */,
 				AEF907A11FB063FC005EA164 /* Assets.xcassets in Resources */,
 				AEF9079F1FB063FC005EA164 /* Main.storyboard in Resources */,
 			);

@@ -45,7 +45,8 @@ class Database {
                     CREATE TABLE IF NOT EXISTS users (
                     first_name TEXT PRIMARY KEY,
                     last_name TEXT,
-                    photo TEXT,
+                    photo_small TEXT,
+                    photo_large TEXT,
                     date TEXT,
                     born_info TEXT,
                     phone TEXT,
@@ -66,11 +67,11 @@ class Database {
                 do{
                     try databaseQueue.inDatabase{ db in
                         try db.execute("""
-                            INSERT INTO users ( first_name, last_name, photo, date, born_info, phone, email)
-                            VALUES (:first, :last, :photo, :date, :born, :phone, :email)
+                            INSERT INTO users ( first_name, last_name, photo_small, photo_large, date, born_info, phone, email)
+                            VALUES (:first, :last, :photo_small, :photo_large, :date, :born, :phone, :email)
                             """,
-                                       arguments: ["first": user.firstName,
-                                                   "last": user.lastName, "photo": user.photo,
+                                       arguments: ["first": user.firstName, "last": user.lastName,
+                                                   "photo_small": user.photoSmall, "photo_large": user.photoLarge,
                                                    "date": user.date, "born": user.bornInfo,
                                                    "phone": user.phone, "email": user.email])
                     }
@@ -80,6 +81,7 @@ class Database {
                 }
             }
         }
+        
     }
     
 }
